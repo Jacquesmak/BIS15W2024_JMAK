@@ -61,7 +61,7 @@ Order of operations applies and you don't need to add an '=' sign.
 
 What is going on here? How do we adjust this expression so the output is 12?
 ```{r}
-4-2*6
+(4-2)*6
 ```
 
 
@@ -84,6 +84,18 @@ median(x)
 
 ```{r}
 sd(x)
+```
+
+```{r}
+y<- c(4,5,7,89,9,7,5)
+```
+
+```{r}
+mean(y)
+```
+
+```{r}
+z=99
 ```
 
 ## RMarkdown  
@@ -137,3 +149,5 @@ ggplot(mtcars, aes(x = factor(cyl))) +
 Please review the learning goals and be sure to use the code here as a reference when completing the homework.  
 
 -->[Home](https://jmledford3115.github.io/datascibiol/)  
+
+2+2
