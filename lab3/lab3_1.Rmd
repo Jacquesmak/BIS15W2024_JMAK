@@ -55,7 +55,7 @@ What are the column names of our data frame? Notice that R defaulted to using th
 
 What are the dimensions of the `hbirds` data frame? The `dim()` and `str()` commands provide this information.   
 ```{r}
-
+dim(hummingbirds_matrix)
 ```
 
 ```{r}
@@ -76,7 +76,7 @@ The same methods of selecting elements in vectors and data matrices apply to dat
 
 The first row.  
 ```{r}
-hbirds[1,]
+hbirds[1,] #this is what we use to pull out the first row
 ```
 
 The third column.  

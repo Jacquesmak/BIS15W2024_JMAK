@@ -73,7 +73,7 @@ The data are from: Gaeta J., G. Sass, S. Carpenter. 2012. Biocomplexity at North
 
 2. What is the structure of these data?
 ```{r}
-
+wtr
 ```
 
 ```{r}
