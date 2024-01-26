@@ -114,28 +114,29 @@ mean(mean2,na.rm=T)
 ```
 
 **9. Make a new dataframe `owls` that is limited to the mean mass, log10 mass, family, genus, and species of owls in the database. Which is the smallest owl? What is its common name? Do a little bit of searching online to see what you can learn about this species and provide a link below** 
-```{r}
-limited_data<-select(homerange, mean.mass.g, log10.mass, family, genus, species)
-limited_data
 
-```
 ```{r}
-```{r}
-owls <-filter(animaldata, family == "cervidae")
+
+owls <-filter(homerange, order == "strigiformes")
 owls
 
 ```
 ```{r}
-max(owls$mean.mass.g)
+min(owls$mean.mass.g)
 ```
-I can't find the owls family in the dataset
-**10. As measured by the data, which bird species has the largest homerange? Show all of your work, please. Look this species up online and tell me about it!**.  
-```{r}
 
-bild <- filter(homerange, taxon == "bild")
-bild
+```{r}
+limited_data<-select(owls, mean.mass.g, log10.mass, family, genus, species)
+limited_data
+
 ```
+
+
+**10. As measured by the data, which bird species has the largest homerange? Show all of your work, please. Look this species up online and tell me about it!**.  
+
+```{r}
+filter(homerange, taxon == "birds")
 ```
-I can't define the bird cataglory
+
 ## Push your final code to GitHub!
 Please be sure that you check the `keep md` file in the knit preferences.   
