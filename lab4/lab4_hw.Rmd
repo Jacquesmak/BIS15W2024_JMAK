@@ -125,6 +125,15 @@ owls
 min(owls$mean.mass.g)
 ```
 
+
+```{r}
+owls %>%
+  select(common.name, mean.mass.g)%>%
+  filter(mean.mass.g==61.32)
+
+```
+Eurasian pygmy owl has the smallest mean mass of 61.32. Tiny, almost sparrow-sized, owl of coniferous and mixed forests. Note staring golden eyes, white eyebrows, and fine pale spotting on the crown. Most active around dusk and dawn, but can be seen hunting in the daytime as well. Sometimes perches atop conifers, but more often rather inconspicuous; can be quite bold when encountered. Song is a varied series of whistled toots, usually given around dawn and dusk and easily imitated.
+https://ebird.org/species/eupowl1
 ```{r}
 limited_data<-select(owls, mean.mass.g, log10.mass, family, genus, species)
 limited_data
@@ -135,8 +144,21 @@ limited_data
 **10. As measured by the data, which bird species has the largest homerange? Show all of your work, please. Look this species up online and tell me about it!**.  
 
 ```{r}
-filter(homerange, taxon == "birds")
+Birdspecies<-filter(homerange, taxon == "birds")
+Birdspecies
 ```
+```{r}
+max(Birdspecies$mean.hra.m2)
+```
+```{r}
+Birdspecies %>%
+  select(common.name, mean.hra.m2)%>%
+  filter(mean.hra.m2==2.41e+08)
+
+
+```
+Caeacara has the largest homerange of 2.41e+08 m^2. Brief info: Large, long-legged raptor of open habitats. Often walks on the ground or perches conspicuously on a fence post or telephone pole. Note dark cap, pale neck, and dark body. Face color varies from orange-red to pale pink, contrasting with pale grayish bill. In flight, look for conspicuous white flashes in wings and tail. Feeds mainly on lizards and snakes. Widespread from the southern U.S. to the southern tip of South America, typically in open fields, deserts, or beaches. Formerly considered two species, Crested and Southern Caracara.
+https://ebird.org/species/y00678
 
 ## Push your final code to GitHub!
 Please be sure that you check the `keep md` file in the knit preferences.   
