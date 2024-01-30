@@ -18,6 +18,7 @@ output:
 ## Load the tidyverse
 ```{r message=FALSE, warning=FALSE}
 library("tidyverse")
+library(j)
 ```
 
 ## Load the data
@@ -40,7 +41,8 @@ mammals <- rename(mammals, genus="Genus", wean_mass="wean mass", max_life= "max.
 
 Do you remember the easier way?
 ```{r}
-
+mammals<-clean_names(mammals)
+mammals
 ```
 
 ## Review
@@ -57,7 +59,7 @@ levels(fish$lakeid)
 
 Now we can pull out any state of interest.  
 ```{r}
-
+filter(fish, lakeid=="LJ")
 ```
 
 ## Using `filter()` on multiple conditions
@@ -68,7 +70,7 @@ filter(fish, lakeid == "AL" & length > 350)
 
 Notice that the `|` operator generates a different result.
 ```{r}
-filter(fish, lakeid == "AL" | length > 350)
+filter(fish, lakeid == "AL" | length > 350)  #
 ```
 
 Rules:  
@@ -85,13 +87,17 @@ filter(fish, length > 400, (scalelength > 11 | radii_length_mm > 8))
 ## Practice  
 1.  From the `mammals` data, filter all members of the family Bovidae with a mass greater than 450000.
 ```{r}
+bovidae<-filter(mammals, mass>450000)
 
+filter(mammals, family==Bovidae, wean_mass>=450000)
 ```
 
 2. From the `mammals` data, build a data frame that compares `mass`, `gestation`, and `newborn` among the primate genera `Lophocebus`, `Erythrocebus`, and `Macaca`. Among these genera, which species has the smallest `newborn` mass?
 ```{r}
-
+mammals2<-select(mammals, "order", "genus","mass", "gestation","newborn")
+mammals3<filter(mammals2, order=="primates")
 ```
+
 
 ```{r}
 
