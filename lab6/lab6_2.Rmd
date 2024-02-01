@@ -79,10 +79,7 @@ superhero_info %>%
 4. List all of the superheros that are not human.
 
 ```{r}
-superhero_info %>% 
-  filter(superhero_info, race !="Human")
-  select(name,race)%>%
-
+filter(superhero_info, race != "Human")
 ```
 
 ## Good and Evil
@@ -163,9 +160,12 @@ Have a quick look at the `superhero_powers` data frame.
 13. How many superheros have a combination of agility, stealth, super_strength, stamina?
 
 ```{r}
-superhero_powers %>% 
-  filter(agility=="TRUE"& stealth=="TRUE" & super_strength=="TRUE" & stamina=="TRUE" )
+#superhero_powers %>%
+#  select(hero_names, Agility, Stealth, Super Strength, stamina) %>% #stuck
+  summary(superhero_powers)
 ```
+
+
 
 ## Your Favorite
 14. Pick your favorite superhero and let's see their powers!  
@@ -178,6 +178,10 @@ filter(superhero_powers, hero_names=="Cat")
 
 ```{r}
 filter(superhero_info, name=="Cat")
+```
+```{r}
+getwd()
+
 ```
 
 
