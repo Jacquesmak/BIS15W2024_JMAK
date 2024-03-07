@@ -53,7 +53,23 @@ penguins %>%
 ## Practice
 1. What if we wanted a plot that showed the number of measured penguins for each species?
 
+```{r}
+penguins %>% 
+  count(species) %>% 
+  ggplot(aes(x=species, y=n))+
+  geom_col()
+```
+
 2. How about average bill length by sex?
+
+```{r}
+penguins %>% 
+  filter(sex!="NA")%>%
+  group_by(sex)%>%
+  summarize(mean=mean(bill_length_mm))%>%
+  ggplot(aes(x=sex, y=mean))+
+  geom_col()
+```
 
 ## Box Plots
 For the next series of examples, we will use the `homerange` data.  **Database of vertebrate home range sizes.**   
@@ -84,8 +100,24 @@ homerange %>%
 
 ## Practice
 1. There are more herbivores than carnivores in the homerange data, but how do their masses compare? Make a summary and boxplot that compares their masses. Use `log10.mass`.
+```{r}
+homerange %>% 
+  filter(trophic.guild=="canivore")
+select(family, trophic. guild, log10.mass)+gr
+```
+```{r}
+homrange%>%
+  ggplot(aes(x=trophic.guid, y=mean. mass. g))+
+  geo
+```
 
-2. Have a closer look at carnivorous mammals. Summarize the range of log10.mass by family.
+
+2. Have a closer look at carnivorous mammals. Summarize the range of log10.mass by family.]]
+```{r}
+homerange%>%
+  filter(trophic.guild)
+```
+
 
 3. Now use a boxplot to visualize the range of log10.mass by family of mammalian carnivore.
 
